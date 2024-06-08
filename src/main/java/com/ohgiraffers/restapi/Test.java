@@ -6,13 +6,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.ohgiraffers.restapi.RestApiApplication;
 
-import java.net.URI;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.stream.Collectors;
-@Tag(name = "Spring Boot Valid 연동 (USER) ")
+@Tag(name = "Spring Boot Valid 연동 ")
 @RestController
 @RequestMapping("/valid")
 public class Test {
@@ -38,10 +36,10 @@ public class Test {
             foundUser=foundUserList.get(0);
 
         }else {
-            throw new UserNotFoundException("회원 정보를 찾을 수 없음!!!");
+            throw new UserNotFoundException("버전 정보를 찾을 수 없음!!!");
         }
         Map<String, Object> responseMap = new HashMap<>();
-        responseMap.put("user", foundUser);
+        responseMap.put("info", foundUser);
 
         return ResponseEntity
                 .ok()

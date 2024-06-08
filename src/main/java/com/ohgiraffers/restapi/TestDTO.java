@@ -13,11 +13,11 @@ public class TestDTO {
 
     @NotNull(message = "아이디는 반드시 입력 되어야 함.")
     @NotBlank(message = "아이디에 공백 포함xxxx ")
-    private String id;
-    private String pwd;
+    private String version;
+    private String date;
     @NotNull(message = "이름은 반드시 입력되어야 합니다.")
     @Size(min = 2,message = "이름은 2글자 이상 입력해야 합니다.")
-    private String name;
+    private String teamName;
 
 
     // @Past 현재 날짜 보다 미래를 선택 못하게 검증 하는 부분
@@ -26,11 +26,11 @@ public class TestDTO {
 
     public TestDTO() {}
 
-    public TestDTO(int no, String id, String pwd, String name, Date enrollDate) {
+    public TestDTO(int no, String version, String date, String teamName, Date enrollDate) {
         this.no = no;
-        this.id = id;
-        this.pwd = pwd;
-        this.name = name;
+        this.version = version;
+        this.date = date;
+        this.teamName = teamName;
         this.enrollDate = enrollDate;
     }
 
@@ -42,28 +42,28 @@ public class TestDTO {
         this.no = no;
     }
 
-    public String getId() {
-        return id;
+    public String getVersion() {
+        return version;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setVersion(String version) {
+        this.version = version;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getDate() {
+        return date;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getName() {
-        return name;
+    public String getTeamName() {
+        return teamName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 
     public Date getEnrollDate() {
@@ -76,11 +76,11 @@ public class TestDTO {
 
     @Override
     public String toString() {
-        return "UserDTO{" +
+        return "TestDTO{" +
                 "no=" + no +
-                ", id='" + id + '\'' +
-                ", pwd='" + pwd + '\'' +
-                ", name='" + name + '\'' +
+                ", version='" + version + '\'' +
+                ", date='" + date + '\'' +
+                ", teamName='" + teamName + '\'' +
                 ", enrollDate=" + enrollDate +
                 '}';
     }

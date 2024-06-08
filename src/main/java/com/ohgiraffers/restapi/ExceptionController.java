@@ -13,7 +13,7 @@ public class ExceptionController {
     public ResponseEntity<ErrorResponse> handleNotFoundException(UserNotFoundException e) {
 
         String code = "ERROR_CODE_0001";
-        String description = "회원 정보 조회 실패...";
+        String description = "버전 정보 조회 실패...";
         String detail = e.getMessage();
 
         return new ResponseEntity<>(new ErrorResponse(code, description, detail), HttpStatus.NOT_FOUND);
